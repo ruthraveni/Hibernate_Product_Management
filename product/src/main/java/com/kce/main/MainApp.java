@@ -20,11 +20,10 @@ public class MainApp {
 			System.out.println("5. Exit");
 			System.out.print("Enter your choice: ");
 			choice = scanner.nextInt();
-			scanner.nextLine(); // Consume newline
+			scanner.nextLine(); 
 
 			switch (choice) {
 			case 1:
-				// Add Product
 				Product product = new Product();
 				System.out.print("Enter Product Name: ");
 				product.setName(scanner.nextLine());
@@ -37,16 +36,16 @@ public class MainApp {
 				break;
 
 			case 2:
-				// View Products
+				
 				System.out.println("\n=== Product List ===");
 				System.out.println(productDAO.getProducts());
 				break;
 
 			case 3:
-				// Update Product
+			
 				System.out.print("Enter Product ID to Update: ");
 				int updateId = scanner.nextInt();
-				scanner.nextLine(); // Consume newline
+				scanner.nextLine();
 				Product updateProduct = new Product();
 				updateProduct.setId(updateId);
 				System.out.print("Enter New Name: ");
@@ -60,7 +59,7 @@ public class MainApp {
 				break;
 
 			case 4:
-				// Delete Product
+			
 				System.out.print("Enter Product ID to Delete: ");
 				int deleteId = scanner.nextInt();
 				productDAO.deleteProduct(deleteId);
