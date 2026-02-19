@@ -8,8 +8,6 @@ import org.hibernate.Transaction;
 import java.util.List;
 
 public class ProductDAO {
-
-    // Save Product
     public void saveProduct(Product product) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -24,14 +22,12 @@ public class ProductDAO {
         }
     }
 
-    // Retrieve All Products
     public List<Product> getProducts() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("from Product", Product.class).list();
         }
     }
 
-    // Update Product
     public void updateProduct(Product product) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -46,7 +42,6 @@ public class ProductDAO {
         }
     }
 
-    // Delete Product by ID
     public void deleteProduct(int id) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
